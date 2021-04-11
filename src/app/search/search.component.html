@@ -1,0 +1,41 @@
+<div class="container">
+  <section class="search-area">
+    <div class="input-wrap">
+      <input
+        #input
+        type="text"
+        placeholder="Type here..."
+        [(ngModel)]="searchText"
+        (keyup)="keyUp($event)"
+        (focus)="isDivHidden = false"
+        (blur)="isDivHidden = true"
+      /><span class="close-icon" (click)="clearSearch()" *ngIf="searchText"
+        >&#x2715;</span
+      >
+      <button [disabled]="searchText.length < 3" (click)="search()">
+        Search
+      </button>
+      <ul *ngIf="!isDivHidden && suggestions.length">
+        <ng-container *ngFor="let item of suggestions; let i = index">
+          <li *ngIf="i <= 20" (mousedown)="$event.preventDefault()" (click)="setSearchQuery(item.name)">
+            {{ item.name }}
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </section>
+  <section class="search-data">
+    <div *ngIf="searchData.length; else elseBlock">
+      <ng-container *ngFor="let item of searchData; let i = index">
+        <div class="item search-result" *ngIf="i <= 20">
+          <h1>{{ item.name }}</h1>
+          <h2>{{ item.email }}</h2>
+          <p>{{ item.body }}</p>
+        </div>
+      </ng-container>
+    </div>
+    <ng-template #elseBlock>
+      <div class="item no-data">No Data</div>
+    </ng-template>
+  </section>
+</div>
