@@ -2,7 +2,8 @@
 
 This is a sample application generated with Angular 11. Tried to implememt below requirements.
 
-Implement a page with a search box, following these requirements: 1. The user must be able to type a text to search 
+Implement a page with a search box, following these requirements: 
+1. The user must be able to type a text to search 
 2. The search can be done calling a public JSON API published at: https://jsonplaceholder.typicode.com/comments?q=mytext via XHR. The "q" query string parameter is used to send the search term. 
 3. The input box should have typeahead feature and a submit button 
 4. The user should see, as the result of the search performed, a list of max 20 results composed by the name and email fields as returned by the server and a summary of the body field with maximum length of 64 characters. 
