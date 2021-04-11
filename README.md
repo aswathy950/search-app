@@ -11,6 +11,7 @@ Implement a page with a search box, following these requirements:
 6. A reviewer with a recent node.js distribution installed should be able to download the project and use "npm start" to start a development server and "npm test" to run the unit tests. 
 7. You are able to use the technology you feel confident with. It might be angular.js, react, vanilla JavaScript and everything in between. 
 
+## Plaese find the demo [Here](https://aswathy950.github.io/search-app/search/)
 
 ## Development server
 
